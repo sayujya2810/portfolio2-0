@@ -1,0 +1,208 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat',monospace;
+    --bg-color: white;
+}
+
+::root{
+    --bg-color:white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+html,body{
+    height: 100%;
+}
+
+.heading-for-all{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.full-height{
+    height: 100vh;
+}
+
+.underlining{
+    height: 1px;
+    width: auto;
+    background-color: white;
+}
+
+a.left
+{
+    position: relative;
+}
+
+a.left:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+a.left:hover:before {
+    visibility: visible;
+    width: 100%;
+  }
+
+header{
+    position: sticky;
+}
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.shadowEffect{
+    box-shadow: 1px 0px 10px ;
+}
+
+nav ol{
+    top: 0%;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2.5vh;
+    background-color: rgb(20, 20, 20);
+    color: white;
+    letter-spacing: 1.5px;
+}
+
+/* Animating My name */
+span{
+    position: relative;
+}
+
+#s1 span::before,
+#s1 span::after {
+    content: '';
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+#s1 span::before{
+    background: var(--bg-color);
+    animation: 
+        typewriter 2.5s steps(14) 1s forwards;
+}
+
+#s1 span::after{
+    width: 0.125em;
+    background-color: black;
+    animation: 
+        typewriter 2.5s steps(14) 1s forwards,
+        blink 750ms steps(14) infinite;
+}
+
+@keyframes typewriter { 
+    to{
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to{
+        background: transparent;
+    }
+}
+
+/* ---- */
+#s1{
+    display: flex;
+    flex-direction: column; 
+}
+
+#s1 img{
+    height: 300px;
+    width: 300px;
+    border-radius: 10rem;
+}
+
+#s1 p{
+    font-size: 27px;
+}
+
+#s1 p span{
+    font-weight: 600;
+}
+
+#home{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    top: 15%;
+}
+
+#home p, img{
+    padding: 1rem;
+}
+
+/* Section s2 starts */
+
+#s2, #s3, #s4, #s5{
+    padding:0vh 12vh;
+    padding-top: 10vh;
+}
+
+
+
+#s2 hr, #s3 hr, #s4 hr, #s5 hr{
+    margin:1rem 0rem;
+}
+
+
+/* S3 starts */
+#inner-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#inner-container #r1, #inner-container #r2{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#r1 div, #r2 div{
+    height: 150px;
+    width: 100px;
+    border: 1px rgb(58, 58, 58) solid;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#r1, #r2{
+    margin: 2rem;
+}
+
+#r1 img, #r2 img{
+    height: 90px;
+    width: auto;
+}
+
+.dark-mode{
+    border: white;
+    color: white;
+    background-color: rgb(36, 36, 36);
+    transition: background 0.2s linear;
+}
+
+/* Add clamp() for responsive font sizing */
